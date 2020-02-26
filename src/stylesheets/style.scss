@@ -1,0 +1,96 @@
+@import '~normalize.css/normalize.css';
+@import './base';
+@import './media';
+@import './fonts';
+
+$App-mainColor: #09f;
+$App-mainColor--contrast: #fff;
+
+// custom styles
+
+html {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  background-color: $App-mainColor;
+}
+
+a {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+  }
+}
+
+.App-title {
+  font-family: 'Permanent Marker';
+  font-size: 5em;
+  background-color: rgba(255,255,255, .4);
+  padding: .2em 1.2em;
+  border-radius: .8em;
+  border: .1em solid #fff;
+}
+
+.App-loader {
+  width: 3em;
+  height: 3em;
+  svg {
+    width: 100%;
+    height: 100%;
+    .iconFill {
+      fill: $App-mainColor--contrast;
+    }
+  }
+
+}
+
+// loading status
+@keyframes loading-fade-out {
+  0%     { opacity: 1; }
+  100%   { opacity: 0; display: none; }
+}
+body {
+  &:not(.is-loading) {
+    .App-loader {
+      display: none;
+      // animation: loading-fade-out .1s forwards;
+    }
+  }
+  &.is-loading {
+    .wrapper_MovieGrid {
+      // display: none;
+      animation: loading-fade-out .1s forwards;
+    }
+  }
+}
+
+// used to hide content visually but not for screen readers
+.u-srOnly {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@keyframes icon-spin {
+  0%     { transform: rotate(0deg); }
+  100%   { transform: rotate(360deg); }
+}
+
+.u-isSpinning {
+  animation: icon-spin 2s infinite linear;
+}

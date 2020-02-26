@@ -1,0 +1,43 @@
+.MovieGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.MovieCard {
+  display: flex;
+  border-radius: .5em;
+  overflow: hidden;
+  box-shadow: 2px 2px 3px 0 #666;
+  margin: 1em;
+  max-width: 35em;
+  background-color: #fff;
+}
+.MovieCard-imageWrapper {
+  width: 150px;
+  display: flex;
+}
+.MovieCard-imageWrapper img {
+  width: 100%;
+}
+.MovieCard-content {
+  flex: 1;
+  padding: 1em;
+}
+.MovieCard-content h1 {
+  font-size: 1.5rem;
+}
+.MovieCard-title {
+  font-size: 1em;
+}
+.MovieCard-year {
+  font-size: 1rem;
+  color: #666;
+  font-style: italic;
+  margin: 0 1em;
+}
+// .MovieCard-plot {
+//   margin: 1em;;
+// }
+.MovieCard-rating {
+  margin: 0 .5em;
+  font-size: 1.125em;
+}
